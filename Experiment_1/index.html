@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Job Portal</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background: #f0f2f5;
+}
+
+/* HEADER */
+header {
+    background-color: red;
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 36px;
+}
+
+header p {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+/* NAVBAR */
+nav {
+    background: white;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #c33764;
+}
+
+/* CONTAINER */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+/* SEARCH */
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* JOB CARDS */
+.jobs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.job-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+}
+
+.job-card h3 {
+    color: #1d2671;
+}
+
+.job-card p {
+    margin: 8px 0;
+    color: #555;
+}
+
+.job-card button {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    background: #1d2671;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.job-card button:hover {
+    background: #c33764;
+}
+
+/* FORMS */
+.form-section {
+    background: white;
+    padding: 25px;
+    margin-top: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.form-section h2 {
+    margin-bottom: 15px;
+    color: #1d2671;
+}
+
+.form-section input,
+.form-section textarea,
+.form-section select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.form-section button {
+    margin-top: 10px;
+    background: #1d2671;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.form-section button:hover {
+    background: #c33764;
+}
+
+/* FOOTER */
+footer {
+    margin-top: 40px;
+    background: #1d2671;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* RESPONSIVE */
+@media(max-width: 600px) {
+    header h1 {
+        font-size: 28px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Online Job Portal</h1>
+    <p>Connecting Talent with Opportunity</p>
+</header>
+
+<nav>
+    <a href="#jobs">Jobs</a>
+    <a href="#login">Login</a>
+    <a href="#register">Register</a>
+    <a href="#post">Post Job</a>
+</nav>
+
+<div class="container">
+
+    <!-- SEARCH -->
+    <div class="search-box">
+        <input type="text" placeholder="Search jobs..." onkeyup="searchJobs(this.value)">
+    </div>
+
+    <!-- JOB LISTINGS -->
+    <section id="jobs" class="jobs">
+        <div class="job-card">
+            <h3>Frontend Developer</h3>
+            <p><b>Company:</b> ABC Tech</p>
+            <p><b>Location:</b> Remote</p>
+            <button>Apply Now</button>
+        </div>
+
+        <div class="job-card">
+            <h3>Java Developer</h3>
+            <p><b>Company:</b> XYZ Solutions</p>
+            <p><b>Location:</b> Bangalore</p>
+            <button>Apply Now</button>
+        </div>
+
+        <div class="job-card">
+            <h3>Data Analyst</h3>
+            <p><b>Company:</b> DataCorp</p>
+            <p><b>Location:</b> Hyderabad</p>
+            <button>Apply Now</button>
+        </div>
+    </section>
+
+    <!-- LOGIN -->
+    <section id="login" class="form-section">
+        <h2>Login</h2>
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <button>Login</button>
+    </section>
+
+    <!-- REGISTER -->
+    <section id="register" class="form-section">
+        <h2>Register</h2>
+        <input type="text" placeholder="Full Name">
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <select>
+            <option>Job Seeker</option>
+            <option>Employer</option>
+        </select>
+        <button>Create Account</button>
+    </section>
+
+    <!-- POST JOB -->
+    <section id="post" class="form-section">
+        <h2>Post a Job</h2>
+        <input type="text" placeholder="Job Title">
+        <input type="text" placeholder="Company Name">
+        <input type="text" placeholder="Location">
+        <textarea placeholder="Job Description"></textarea>
+        <button>Post Job</button>
+    </section>
+
+</div>
+
+<footer>
+    © 2026 Job Portal | Full Stack Project
+</footer>
+
+
+
+</body>
+</html>
